@@ -1,0 +1,24 @@
+<div class="mx-auto">  
+  <div class="max-w-sm mb-4 p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+    <ul class="list-disc">
+      <li>Board Name: <%= @board.name %></li>
+      <li>Creator email: <%= @board.email %></li>
+    </ul>
+  </div>
+
+  <table class="table-fixed">
+    <tbody>
+      <% @board.pattern.each do |row|  %>
+        <tr>
+          <% row.each do |field| %>
+              <td class="border-solid border-2 border-black w-36 h-36"> 
+                <% if field == 'x' %>
+                  <%= image_tag 'bomb.svg' %>
+                <% end %>
+              </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
